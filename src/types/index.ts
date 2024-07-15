@@ -65,6 +65,10 @@ export interface ISuccess {
   description: string;
 }
 
+export interface ISuccessActions {
+	onClick: () => void;
+}
+
 export interface IModalData {
   content: HTMLElement;
 }

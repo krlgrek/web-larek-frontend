@@ -329,6 +329,12 @@ interface ISuccess {
   description: string;
 }
 ```
+Интерфейс для действий  в окне успешного заказа:
+```typescript
+interface ISuccessActions {
+	onClick: () => void;
+}
+```
 Интерфейс модального окна:
 ```typescript
 interface IModalData {
