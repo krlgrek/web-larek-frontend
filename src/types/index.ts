@@ -50,8 +50,8 @@ export interface IOrderResult extends IOrder {
 }
 
 export interface IBasket {
-    item: IItemCard[];
-    price: string;
+  items: HTMLElement[];
+  total: number
 }
 
 export interface IPage {
@@ -76,4 +76,8 @@ export interface IModalData {
 export interface IFormState {
   valid: boolean;
   errors: string[];
+}
+
+export interface ICardActions {
+  onClick: (event: MouseEvent) => void;
 }
