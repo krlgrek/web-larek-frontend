@@ -3,12 +3,12 @@ import './scss/styles.scss';
 import { HandleApi } from './components/handleAPI';
 import { API_URL, CDN_URL } from './utils/constants';
 import { EventEmitter } from './components/base/events';
-import { Basket } from './components/common/basket';
+import { Basket } from './components/basket';
 import { Modal } from './components/common//modal';
 import { AppState, CatalogEvent } from './components/appState';
 import { BasketItem, CatalogItem } from './components/card';
-import { Order } from './components/order';
-import { Success } from './components/common/success';
+import { OrderForm } from './components/order';
+import { Success } from './components/success';
 import { Page } from './components/page';
 import { ensureElement, cloneTemplate } from './utils/utils';
 import { IItemCard, IOrderForm, IOrder } from './types';
@@ -34,8 +34,8 @@ const page = new Page(document.body, events);
 const modal = new Modal(ensureElement<HTMLElement>('#modal-container'), events);
 
 const basket = new Basket(cloneTemplate(basketTemplate), events);
-const contactsForm = new Order(cloneTemplate(contactsTemplate), events);
-const paymentForm = new Order(cloneTemplate(orderTemplate), events);
+const contactsForm = new OrderForm(cloneTemplate(contactsTemplate), events);
+const paymentForm = new OrderForm(cloneTemplate(orderTemplate), events);
 
 // Изменились элементы каталога
 events.on<CatalogEvent>('items:changed', () => {
